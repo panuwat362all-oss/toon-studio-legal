@@ -1,0 +1,192 @@
+/* Lantern Tales — ธีมกลางคืนน้ำเงิน-ม่วง กับแสงโคมสีทอง (ไม่โหลดฟอนต์หรือไฟล์ภายนอก) */
+:root {
+  --night: #12142e;
+  --dusk: #1d1f4a;
+  --violet: #3a2c6b;
+  --ink: #e9e6f5;
+  --mist: #b3aed0;
+  --gold: #f0c35c;
+  --ember: #d9963a;
+  --rule: rgba(240, 195, 92, 0.28);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+    "Noto Serif Thai", "Leelawadee UI", "Thonburi", Tahoma, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", "Leelawadee UI", "Noto Sans Thai", Tahoma, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 60rem 32rem at 50% -6rem, rgba(240, 195, 92, 0.16), transparent 70%),
+    linear-gradient(180deg, var(--dusk) 0%, var(--night) 42rem);
+  background-color: var(--night);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+}
+
+a { color: var(--gold); text-underline-offset: 0.18em; }
+a:hover { color: #ffe0a0; }
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  background: var(--gold);
+  color: var(--night);
+  padding: 0.4rem 0.8rem;
+}
+.skip:focus { left: 0.5rem; }
+
+/* หัวเว็บ: โคมเป็นจุดเด่นเพียงจุดเดียว */
+.masthead {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand:hover { color: var(--ink); }
+
+.brand img {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  box-shadow: 0 0 0 1px var(--rule), 0 0 48px 6px rgba(240, 195, 92, 0.32);
+}
+
+.brand-name {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+.brand-thai {
+  display: block;
+  font-size: 1rem;
+  color: var(--mist);
+}
+
+.policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+.policy-links a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(58, 44, 107, 0.45);
+}
+.policy-links a:hover { border-color: var(--gold); }
+.policy-links a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--night);
+  border-color: var(--gold);
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+h1, h2, h3 { font-weight: 600; line-height: 1.25; color: #fff8e6; }
+h1 { font-size: 2rem; margin: 1.5rem 0 0.4rem; }
+h2 { font-size: 1.35rem; margin: 2.4rem 0 0.6rem; }
+h3 { font-size: 1.1rem; margin: 1.6rem 0 0.4rem; }
+
+p, ul, ol { margin: 0 0 1rem; }
+li { margin-bottom: 0.4rem; }
+strong { color: #fff8e6; }
+
+.meta {
+  color: var(--mist);
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  margin-bottom: 2rem;
+}
+
+.lede { font-size: 1.2rem; color: #f3efff; }
+
+.note {
+  border-left: 3px solid var(--gold);
+  padding: 0.8rem 1rem;
+  margin: 1.5rem 0;
+  background: rgba(58, 44, 107, 0.4);
+  border-radius: 0 6px 6px 0;
+}
+.note p:last-child { margin-bottom: 0; }
+
+ol.flow { padding-left: 1.4rem; }
+
+/* สรุปภาษาไทยท้ายหน้า */
+.thai-summary {
+  margin-top: 3rem;
+  padding: 1.25rem 1.25rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: rgba(29, 31, 74, 0.7);
+  line-height: 1.85;
+}
+.thai-summary h2 { margin-top: 0; font-size: 1.2rem; }
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.75rem 1.25rem 2.5rem;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--mist);
+}
+.site-footer p { margin: 0.6rem 0 0; }
+.site-footer .policy-links { margin-top: 0; }
+
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  .masthead { padding-top: 1.75rem; }
+  .brand img { width: 80px; height: 80px; border-radius: 18px; }
+  .brand-name { font-size: 1.6rem; }
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.22rem; }
+}
+
+@media print {
+  body { background: #fff; color: #000; }
+  a { color: #000; }
+  h1, h2, h3, strong { color: #000; }
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  background: rgba(240, 195, 92, 0.12);
+  color: #ffe0a0;
+}

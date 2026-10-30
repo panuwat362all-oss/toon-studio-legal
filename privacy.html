@@ -1,0 +1,117 @@
+<!-- ร่างโดยผู้ช่วย AI ไม่ใช่คำปรึกษาทางกฎหมาย -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Lantern Tales</title>
+  <meta name="description" content="Privacy Policy for Lantern Tales and the Toon Studio Uploader TikTok app.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="masthead">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Lantern Tales logo" width="96" height="96">
+      <span class="brand-name">Lantern Tales<span class="brand-thai" lang="th">นิทานใต้แสงโคม</span></span>
+    </a>
+    <nav aria-label="Policies">
+      <ul class="policy-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: 30 October 2026</p>
+
+    <p>This policy explains what data Toon Studio Uploader (our TikTok developer app), the Lantern Tales channel and this website handle, and why. In short: the only TikTok account connected to the tool is the channel owner's own account, and the tool uses it only to upload the channel's videos to the owner's inbox.</p>
+
+    <h2>1. Who connects to Toon Studio Uploader</h2>
+    <p>Toon Studio Uploader is an internal tool. The only TikTok user who connects to it is the channel owner. The owner signs in through TikTok Login Kit (OAuth 2.0 with PKCE) and grants a single permission: <code>video.upload</code>. The tool does not request any other scope.</p>
+
+    <h2>2. Data we receive from TikTok</h2>
+    <p>When the owner authorizes the app, TikTok returns:</p>
+    <ul>
+      <li>an access token and a refresh token;</li>
+      <li>the owner's <code>open_id</code> (an app-specific account identifier);</li>
+      <li>the list of scopes that were granted.</li>
+    </ul>
+    <p>We do not receive or store the owner's TikTok password. We do not read profile information, followers, videos, comments, messages, or any data about other TikTok users.</p>
+
+    <h2>3. How we use it</h2>
+    <p>Tokens are used for two things only:</p>
+    <ul>
+      <li>sending a video file created by the channel to the owner's TikTok inbox;</li>
+      <li>checking the status of that upload.</li>
+    </ul>
+    <p>The tool does not post automatically. The owner reviews each draft and posts it manually in the TikTok app.</p>
+
+    <h2>4. How we store it</h2>
+    <ul>
+      <li>The refresh token is stored as an encrypted secret in GitHub Actions, where the production system runs.</li>
+      <li>If updating that secret fails, a backup copy of the latest tokens (refresh token, access token, expiry time and granted scopes) is saved in the owner's private GitHub repository, encrypted with AES-256-GCM. The encryption key is kept separately as another encrypted secret.</li>
+      <li>Otherwise, access tokens are short-lived and are only held in memory while a job runs.</li>
+    </ul>
+
+    <h2>5. Sharing</h2>
+    <p>We do not sell, rent or share TikTok data with anyone, and we do not use it for advertising or profiling.</p>
+
+    <h2>6. Other services the system uses</h2>
+    <p>The production system uses the services below to make videos. None of them receive TikTok user data or tokens.</p>
+    <ul>
+      <li><strong>Google Gemini API</strong> to write and check scripts and to generate voice-over.</li>
+      <li><strong>Cloudflare Workers AI</strong> to generate background images.</li>
+      <li><strong>GitHub</strong> to host the code and run the system (GitHub Actions).</li>
+      <li><strong>Telegram</strong> to send finished clips and notifications to the owner.</li>
+    </ul>
+
+    <h2>7. Revoking access and deleting data</h2>
+    <p>The owner can revoke the app's access at any time in the TikTok app, under the privacy or security settings that list connected apps and services (for example, Settings and privacy, then Security and permissions, then Apps and services; menu names may vary by app version). You can also email us to ask for deletion.</p>
+    <p>Stored tokens are deleted within 30 days after access is revoked or after the tool is no longer used.</p>
+
+    <h2>8. People who watch our videos</h2>
+    <p>The tool and this website do not collect any data about people who watch, like or comment on our videos. Your activity on TikTok is handled by TikTok under the TikTok Privacy Policy.</p>
+
+    <h2>9. This website</h2>
+    <p>This website uses no cookies, no analytics and no tracking scripts. It is hosted on GitHub Pages, and GitHub may keep technical logs such as IP addresses for security, under GitHub's own privacy statement.</p>
+
+    <h2>10. Age</h2>
+    <p>The channel and the tool are not directed at anyone under 18, and we do not knowingly collect data from minors.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>We may update this policy. The new version will be posted on this page with a new effective date.</p>
+
+    <h2>12. Contact</h2>
+    <p>Questions or deletion requests: <a href="mailto:panuwat392.ss@gmail.com">panuwat392.ss@gmail.com</a></p>
+
+    <section class="thai-summary" lang="th">
+      <h2>สรุปภาษาไทย</h2>
+      <ul>
+        <li>ผู้ใช้ TikTok คนเดียวที่เชื่อมกับ Toon Studio Uploader คือเจ้าของช่อง ผ่าน Login Kit (OAuth + PKCE) ขอสิทธิ์ <code>video.upload</code> อย่างเดียว</li>
+        <li>ข้อมูลที่ได้: access token, refresh token, open_id และรายการ scope ที่ได้รับ ไม่เก็บรหัสผ่าน ไม่อ่านโปรไฟล์ ผู้ติดตาม วิดีโอ ข้อความ หรือข้อมูลผู้ใช้อื่น</li>
+        <li>ใช้ token เพื่อส่งวิดีโอเข้า inbox และเช็กสถานะการอัปโหลดเท่านั้น เจ้าของตรวจและโพสต์เอง ไม่โพสต์อัตโนมัติ</li>
+        <li>เก็บ refresh token ใน GitHub Actions encrypted secrets และเมื่อจำเป็นจะเก็บไฟล์สำรอง token (เข้ารหัส AES-256-GCM) ใน repository ส่วนตัว</li>
+        <li>ไม่ขาย ไม่แชร์ ไม่ใช้เพื่อโฆษณา</li>
+        <li>บริการภายนอก (Google Gemini API, Cloudflare Workers AI, GitHub, Telegram) ไม่ได้รับข้อมูลผู้ใช้ TikTok</li>
+        <li>ถอนสิทธิ์ได้ในแอป TikTok ที่หน้าการตั้งค่าแอปและบริการที่เชื่อมต่อ หรืออีเมลมาขอลบ token ถูกลบภายใน 30 วันหลังถอนสิทธิ์หรือเลิกใช้</li>
+        <li>ไม่เก็บข้อมูลผู้ชมวิดีโอ เว็บไซต์นี้ไม่มีคุกกี้และ analytics (GitHub Pages อาจเก็บ log ทางเทคนิค)</li>
+        <li>ไม่ได้มุ่งเป้าผู้อายุต่ำกว่า 18 ปี มีผลตั้งแต่ 30 ตุลาคม 2026</li>
+        <li>ติดต่อ: <a href="mailto:panuwat392.ss@gmail.com">panuwat392.ss@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="policy-links">
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="privacy.html" aria-current="page">Privacy Policy</a></li>
+    </ul>
+    <p><a href="index.html">Lantern Tales home</a> · Contact: <a href="mailto:panuwat392.ss@gmail.com">panuwat392.ss@gmail.com</a></p>
+  </footer>
+</body>
+</html>
